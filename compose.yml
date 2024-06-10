@@ -1,0 +1,15 @@
+services:
+  postgres:
+    image: postgres:latest
+    container_name: postgres-users-roles-auth
+    environment:
+      POSTGRES_USER: useradmin
+      POSTGRES_PASSWORD: secret
+      POSTGRES_DB: user-roles-auth
+    ports:
+      - "5431:5432"
+    volumes:
+      - my_postgres_data:/var/lib/postgresql/data
+
+volumes:
+  my_postgres_data:
